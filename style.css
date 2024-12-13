@@ -1,0 +1,245 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+   text-align: center ; 
+    background: url('image.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    padding-right: 2rem; }
+
+
+#header {
+    background-color: transparent;
+    text-align: right; 
+    padding: 0.5rem 1rem; 
+    margin-top: 198px;
+    gap: 0px;
+}
+
+#header h1 {
+    color:#382515 ; 
+    font-size: 100px; 
+    margin-top: 20px; 
+    font-weight: bold;
+    
+}
+
+#header h2 {
+    color: #382515; 
+    font-size: 40px; 
+    text-align:center;
+    margin-top:  -60px;
+    font-weight: normal;
+    animation: fadeSlide 2s ease-in-out;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#main-content {
+    display: flex;
+    flex-direction: column;
+    margin-top:  -39px;
+    margin-right: 50px;
+    align-items: flex-end; 
+    width: 40%; 
+    gap: 1rem; 
+}
+
+#search {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 0.5rem; 
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    
+}
+
+#search input, #search select, #search button {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#diet {
+   text-align: center; 
+    text-align-last: center; 
+}
+
+
+#search button:hover {
+    background-color: #ff6f61;
+    color: #fff;
+    cursor:pointer;  
+    animation: pulse 0.6s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+#results {
+   
+    border-radius: 10px; 
+    width: 100%; 
+    padding: 1rem;
+    text-align: right;
+}
+
+#recipes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    justify-content: flex-end;
+    gap: 1rem;}
+ 
+
+.recipe-card {
+    background-color: #382515;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease; 
+}
+
+
+.recipe-card:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-card:hover img {
+    transform: scale(1.2); /
+}
+
+
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #382515; 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    color: #805c3f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px; 
+    max-height: 80%;
+    overflow-y: auto; 
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative; 
+}
+
+#close-popup {
+    background-color: #247519;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: fixed;
+    top: 10px;
+    right: 10px; 
+}
+
+#close-popup:hover {
+    background-color: #a2d671;
+}
+
+
+
+@media (max-width: 390px) {
+
+    #header h1 {
+        font-size: 2.5rem;
+        color: #382515;
+        text-align: right;
+        margin-top: -150px;
+    }
+
+    #header h2 {
+        font-size: 1.2rem;
+         margin-top: -20px ;
+    }
+
+    #main-content {
+        margin-top: -30px;
+        width: 80%;
+       
+    }
+
+    #search input, #search select, #search button {
+        font-size: 0.9rem;
+        margin-left: 90px;
+    }
+
+    #recipes {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        margin-left: 90px;
+        gap: 0.5rem;}
+    
+    .recipe-card {
+        font-size: 1rem;
+        width: 100%;
+        align-items: left;
+       
+    }
+
+    
+
+    .popup-content {
+        font-size: 1rem;
+
+    
+    }
+
+
+}
